@@ -1,0 +1,21 @@
+<h1>hello, ajax!</h1>
+<script>
+    function getRandom() {
+        var input = document.getElementById('max')
+        var req = new XMLHttpRequest();
+        req.open('get', 'random?max=' + input.value, true);
+        req.send()
+        req.onload = function () {
+            // console.log(req.responseText);
+            var div = document.getElementById('num')
+            div.innerText = req.responseText
+        }
+    }
+</script>
+<body>
+random number : <input type="text" id="max">
+<button onclick="getRandom();">get random number</button>
+<div id="num">
+
+</div>
+</body>
